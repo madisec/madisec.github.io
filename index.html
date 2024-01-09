@@ -11,34 +11,28 @@
     />
   </head>
   <body>
-    <header class="header">
-      <a href="#" class="logo">MadiSec</a>
-      <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Skill</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    <section class="home">
-      <div class="home-content">
-        <h3>Hello, I'ts Me</h3>
-        <h1>MadiSec</h1>
-        <h3>And I'm a</h3>
-        <p>
-          Bug hunter, somtimes programmer. in other word, I'm nuts about
-          learning in computer world.
-          <br />
-          Interested in Web Security. 23 years old.
-        </p>
-        <div class="home-sci">
-          <a href="https://google.com"><i class="bx bxl-twitter"></i></a>
-          <a href="#"><i class="bx bxl-telegram"></i></a>
-          <a href="#"><i class="bx bxl-github"></i></a>
-          <a href="#"><i class="bx bxl-instagram"></i></a>
+    <header>
+        <nav>
+            <h1>MadiSec</h1>
+            <ul>
+                <li><a href="https://github.com/madisec">Github <i class='bx bxl-github'></i></a></li>
+                <li><a href="https://twitter.com/Madiisec">Twiiter <i class='bx bxl-twitter' ></i></a></li>
+                <li><a href="https;//t.me/MadiSec">Telegram <i class='bx bxl-telegram' ></i></a></li>
+                <li><a href="mailto://madiisec@gmail.com">Email <i class='bx bxs-envelope' ></i></a></li>
+            </ul>
+            <button id="headbtn">Discord <i class='bx bxl-discord-alt' ></i></button>
+        </nav>
+        <div class="container">
+            <img src="./profile.jpg" alt="Profile" id="profile">
+            <h1>Hello, I'm MadiSec</h1>
+            <p>
+                Maby bug hunter, somtimes programmer and Interested in Web Security
+                <br>
+                I'm 23 years old and nuts about coffee and 
+            </p>
+            <button onclick="telegram_redirect()">contact with me <i class='bx bxs-message-square-dots' ></i></button>
         </div>
-      </div>
-    </section>
+    </header>
+    <script src="./main.js"></script>
   </body>
 </html>
