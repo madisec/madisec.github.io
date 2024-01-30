@@ -3,166 +3,260 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Madisec</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <title id="title"></title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
       * {
         left: 0;
         right: 0;
-        bottom: 0;
         top: 0;
-        margin: 0;
+        bottom: 0;
         padding: 0;
+        margin: 0;
         box-sizing: border-box;
-        font-family: "Roboto", sans-serif;
-      }
-      body {
-        background-color: #fdfffc;
       }
       header {
-        background: linear-gradient(black, rgba(0, 0, 0, 0)), url("./bg.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        padding: 1rem;
+        height: 10vh;
+        background-color: black;
+        color: rgb(7, 221, 7);
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        h1 {
-          margin-left: 0.3rem;
-          color: #fdfffc;
-        }
-      }
-      header nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding: 0.1rem;
-        margin-top: 0.5rem;
+        text-align: center;
+        font-family: "Sixtyfour", sans-serif;
+        font-size: large;
+        letter-spacing: 0.5rem;
       }
-
-      header nav ul {
+      section {
+        background-color: #191919;
         display: flex;
         flex-direction: row;
-        width: 40vw;
-        justify-content: space-evenly;
+        justify-content: center;
+        height: 90vh;
       }
-      #headbtn {
-        width: 10vw;
-        height: 5vh;
-        background-color: #001427;
-        color: #fdfffc;
-        border: none;
-        border-radius: 3rem;
-        margin-right: 0.3rem;
-        transition: 0.5s;
+      .content {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
       }
-      #headbtn:hover {
-        background-color: transparent;
-        color: #2ec4b6;
-        border: 0.1rem solid #2ec4b6;
-      }
-      header nav li {
-        list-style: none;
-      }
-      nav li a {
-        text-decoration: none;
-        color: #fdfffc;
-        font-size: 1rem;
-        transition: 0.5s;
-      }
-      nav li a:hover {
-        color: #2ec4b6;
-        border-bottom: 0.1rem solid #2ec4b6;
-      }
-      #profile {
-        width: 100px;
-        height: auto;
-        border-radius: 50px;
+      .Ubuntu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
       .container {
-        background-color: white;
-        justify-self: center;
-        align-self: center;
-        margin-top: 5rem;
-        text-align: center;
-        padding: 3rem;
-        border-radius: 10px;
-        width: 45vw;
-        h1 {
-          color: #e71d36;
+        width: 400px;
+        height: 300px;
+        background: #1e1e1e;
+        font-family: Menlo, Consolas, monospace;
+        font-size: 14px;
+        color: #e6e6e6;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .terminal_toolbar {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #212121;
+        justify-content: space-between;
+      }
+
+      .butt {
+        display: flex;
+        align-items: center;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-right: 5px;
+        font-size: 8px;
+        height: 12px;
+        width: 12px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 100%;
+        background: linear-gradient(#7d7871 0%, #595953 100%);
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
+      }
+
+      .btn-color {
+        background: #ee411a;
+      }
+
+      .btn:hover {
+        cursor: pointer;
+      }
+
+      .btn:focus {
+        outline: none;
+      }
+
+      .butt--exit {
+        background: linear-gradient(#f37458 0%, #de4c12 100%);
+      }
+
+      .add_tab {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 0 6px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: none;
+        cursor: pointer;
+      }
+
+      .user {
+        color: #d5d0ce;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 15px;
+      }
+
+      .terminal_body {
+        background: rgba(0, 0, 0, 0.6);
+        height: calc(100% - 30px);
+        padding-top: 2px;
+        margin-top: -1px;
+        font-size: 12px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .terminal_prompt {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+      }
+
+      .terminal_prompt span {
+        margin-left: 4px;
+      }
+
+      .terminal_user {
+        color: #1eff8e;
+      }
+
+      .terminal_location {
+        color: #4878c0;
+      }
+
+      .terminal_bling {
+        color: #dddddd;
+      }
+
+      .terminal_cursor {
+        display: block;
+        height: 14px;
+        width: 5px;
+        margin-left: 10px;
+        animation: curbl 1200ms linear infinite;
+      }
+
+      .terminal_output {
+        padding: 4px;
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+
+      .output_text {
+        margin: 0;
+      }
+
+      .terminal_input {
+        padding: 4px;
+      }
+
+      .input_text {
+        width: 100%;
+        padding: 6px;
+        background: transparent;
+        border: none;
+        color: #e6e6e6;
+        caret-color: #1eff8e;
+      }
+
+      @keyframes curbl {
+        0% {
+          background: #ffffff;
         }
-        p {
-          color: #001427;
-          font-size: 1rem;
+
+        49% {
+          background: #ffffff;
         }
-        button {
-          width: 10vw;
-          margin-top: 1rem;
-          height: 5vh;
-          background-color: #001427;
-          color: #fdfffc;
-          border: none;
-          border-radius: 3rem;
-          transition: 0.5s;
+
+        60% {
+          background: transparent;
         }
-        button:hover {
-          background-color: transparent;
-          color: #001427;
-          border: 0.1rem solid #001427;
+
+        99% {
+          background: transparent;
+        }
+
+        100% {
+          background: #ffffff;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav>
-        <h1>MadiSec</h1>
-        <ul>
-          <li>
-            <a href="https://github.com/madisec"
-              >Github <i class="bx bxl-github"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/Madiisec"
-              >Twiiter <i class="bx bxl-twitter"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https;//t.me/MadiSec"
-              >Telegram <i class="bx bxl-telegram"></i
-            ></a>
-          </li>
-          <li>
-            <a href="mailto://madiisec@gmail.com"
-              >Email <i class="bx bxs-envelope"></i
-            ></a>
-          </li>
-        </ul>
-        <button id="headbtn">Discord <i class="bx bxl-discord-alt"></i></button>
-      </nav>
-      <div class="container">
-        <img src="./profile.jpg" alt="Profile" id="profile" />
-        <h1>Hello, I'm MadiSec</h1>
-        <p>
-          Maby bug hunter, somtimes programmer and Interested in Web Security
-          <br />
-          I'm 23 years old and nuts about coffee and
-        </p>
-        <button onclick="telegram_redirect()">
-          contact with me <i class="bx bxs-message-square-dots"></i>
-        </button>
-      </div>
+      <h1 id="headerContent"></h1>
     </header>
+    <section>
+      <div class="Ubuntu">
+        <div class="container">
+          <div class="terminal_toolbar">
+            <div class="butt">
+              <button class="btn btn-color"></button>
+              <button class="btn"></button>
+              <button class="btn"></button>
+            </div>
+            <p class="user">GNU/LinuxTerminal -> Bash</p>
+            <div class="add_tab">+</div>
+          </div>
+          <div class="terminal_body">
+            <div class="terminal_prompt">
+              <span class="terminal_user">Rooot@root:</span>
+              <span class="terminal_location">~</span>
+              <span class="terminal_bling">$ echo run | madisec</span>
+              <span class="terminal_cursor"></span>
+            </div>
+            <div class="terminal_output">
+              <pre class="output_text">Welcome to MadiSec Page
+I'm Mehdi Kamari, maybe a bug  hunter and
+sometimes programmer. In other words, I'm 
+nuts abot web application security.
+
+You can follow my social media and Github.
+Twitter X:  <a href="https://x.com/Madiisec?t=_8hgiZ-SyImbFbOG4csJ_w&s=09">Follow</a>
+E-mail:     <a href="mailto://madiisec@gmail.com">Send E-mail</a>
+Github:     <a href="https://github.com/madisec">Follow GitHub</a>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script>
-      function telegram_redirect() {
-        window.location.replace("https://t.me/@MadiSec");
-      }
+      var title = "MadiSec";
+      document.getElementById("title").innerHTML = title;
+      document.getElementById("headerContent").innerHTML = "MadiSec";
     </script>
   </body>
 </html>
